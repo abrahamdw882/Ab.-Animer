@@ -1000,6 +1000,32 @@ h2 {
     width: 100%;
     margin: 20px 0px;
 }
+.container {
+    display: none;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: 'Roboto';
+}
+
+.container h6 {
+    color: #721c24;
+    font-size: x-large;
+}
+
+.container p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.container a {
+    color: #721c24;
+    text-decoration: underline;
+}
+
 .ep-slide img {
     width: 100%;
     height: 100%;
