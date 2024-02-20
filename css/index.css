@@ -6,7 +6,9 @@ body {
 header {
     width: 100%;
 }
-
+marquee {
+    color:white;
+    
 footer {
     background: #1de1fd;
     display: flex;
