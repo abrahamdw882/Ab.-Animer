@@ -41,7 +41,7 @@ footer a {
 }
 
 #head-div {
-    background: linear-gradient(to right, #1de1fd 40%, #f45c43);
+    background: linear-gradient(to right, #f45c43 40%, #1de1fd);
     width: 100%;
     text-align: center;
     padding-top: 25px;
