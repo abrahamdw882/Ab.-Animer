@@ -10,7 +10,7 @@ marquee {
     color:white;}
     
 footer {
-    background: #1de1fd;
+    background: black;
     display: flex;
     flex-wrap: nowrap;
     align-content: center;
