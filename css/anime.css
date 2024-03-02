@@ -22,6 +22,22 @@ background-color: white;
     font-size: 16px;
 }
 
+.input-style {
+    color: #3366FF;
+    background-color: #E5E5E5;
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    padding: 8px 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-style::placeholder {
+    color: #999999;
+    font-style: italic;
+}
 footer {
     background: #eb3349;
     display: flex;
