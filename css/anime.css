@@ -17,7 +17,10 @@ header {
     width: 100%;
 }
 marquee {
-    color:white;}
+    color:white;
+background-color: #282828;
+    font-size: 11px;
+}
 
 footer {
     background: #eb3349;
