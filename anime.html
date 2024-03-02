@@ -178,10 +178,9 @@
     <script src="./js/anime.js"></script>
     <script src="https://kit.fontawesome.com/45cb819601.js" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHQX4066ZV"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-BHQX4066ZV');</script>
-document.addEventListener("DOMContentLoaded", function() {
+    <script>document.addEventListener("DOMContentLoaded", function() {
     const inputElement = document.querySelector('.input-style');
-    const suggestions = ['Episode 1', 'Episode 2', 'Episode 3']; // Example suggestions
+    const suggestions = ['Episode 1', 'Episode 2', 'Episode 3'];
 
     inputElement.addEventListener('input', function(event) {
         const inputValue = event.target.value;
@@ -189,10 +188,8 @@ document.addEventListener("DOMContentLoaded", function() {
             suggestion.toLowerCase().includes(inputValue.toLowerCase())
         );
         console.log(matchedSuggestions);
-      
     });
-});
-    
+});</script>
 </body>
 
 </html>
