@@ -16,6 +16,8 @@ body {
 header {
     width: 100%;
 }
+marquee {
+    color:white;}
 
 footer {
     background: #eb3349;
