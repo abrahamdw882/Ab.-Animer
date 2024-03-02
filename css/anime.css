@@ -17,8 +17,8 @@ header {
     width: 100%;
 }
 marquee {
-    color:white;
-background-color: #282828;
+    color:red;
+background-color: white;
     font-size: 14px;
 }
 
