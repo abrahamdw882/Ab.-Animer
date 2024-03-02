@@ -179,12 +179,19 @@
     <script src="https://kit.fontawesome.com/45cb819601.js" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHQX4066ZV"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-BHQX4066ZV');</script>
-    <script>const inputElement = document.querySelector('.input-style');
+document.addEventListener("DOMContentLoaded", function() {
+    const inputElement = document.querySelector('.input-style');
+    const suggestions = ['Episode 1', 'Episode 2', 'Episode 3']; // Example suggestions
 
-inputElement.addEventListener('input', function(event) {
-    const inputValue = event.target.value;
-    console.log(inputValue);
-});</script>
+    inputElement.addEventListener('input', function(event) {
+        const inputValue = event.target.value;
+        const matchedSuggestions = suggestions.filter(suggestion =>
+            suggestion.toLowerCase().includes(inputValue.toLowerCase())
+        );
+        console.log(matchedSuggestions);
+      
+    });
+});
     
 </body>
 
