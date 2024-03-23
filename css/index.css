@@ -605,7 +605,6 @@ h2 {
 
 .slideshow-container {
     width: 100%;
-    position:absolute;
     
 }
 
@@ -613,7 +612,7 @@ h2 {
     -webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    overflow: hidden;
+    overflow: hidden:
 }
 
 .mySlides {
