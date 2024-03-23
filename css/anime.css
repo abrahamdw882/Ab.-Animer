@@ -5,39 +5,24 @@
 
 #load img {
     width: 5%;
-    min-width: 35px;
+    min-width: 40px;
+    border: none;
 }
 
 html,
 body {
-    background-color: #282828;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #131314;
+    scroll-behavior: smooth;
+    user-select: none;
 }
 
 header {
     width: 100%;
 }
-marquee {
-    color:red;
-background-color: white;
-    font-size: 16px;
-}
 
-.input-style {
-    color: #3366FF;
-    background-color: #E5E5E5;
-    height: 30px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #CCCCCC;
-    padding: 8px 12px;
-    font-size: 14px;
-    outline: none;
-}
-
-.input-style::placeholder {
-    color: #999999;
-    font-style: italic;
-}
 footer {
     background: #eb3349;
     display: flex;
@@ -72,10 +57,9 @@ footer a {
 }
 
 #head-div {
-    background: linear-gradient(to right, red 40%, #f45c43);
+    background: linear-gradient(to right, #eb3349 40%, #f45c43);
     width: 100%;
     text-align: center;
-    padding-top: 25px;
     height: 86px;
     margin: auto;
     font-family: "Roboto", sans-serif;
@@ -193,6 +177,11 @@ div {
     margin: 0px;
     overflow: visible;
     margin-top: 20px;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
 }
 
 .details {
@@ -593,6 +582,8 @@ h2 {
     margin: 0px 2px;
     margin-bottom: 10px;
     display: inline-block;
+    width: 70px;
+    text-align: center;
 }
 
 .la-anime {
@@ -891,8 +882,7 @@ h2 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2) format("woff2");
     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
         U+FE2E-FE2F;
 }
@@ -901,8 +891,7 @@ h2 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXpsog.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXpsog.woff2) format("woff2");
     unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
@@ -910,8 +899,7 @@ h2 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXpsog.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXpsog.woff2) format("woff2");
     unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
         U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
@@ -920,8 +908,7 @@ h2 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
         U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -930,8 +917,7 @@ h2 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
         U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
         U+2215, U+FEFF, U+FFFD;
@@ -941,8 +927,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format("woff2");
     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
         U+FE2E-FE2F;
 }
@@ -951,8 +936,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKOzY.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format("woff2");
     unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
@@ -960,8 +944,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKOzY.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format("woff2");
     unicode-range: U+1F00-1FFF;
 }
 
@@ -969,8 +952,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKOzY.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format("woff2");
     unicode-range: U+0370-03FF;
 }
 
@@ -978,8 +960,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKOzY.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format("woff2");
     unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
         U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
@@ -988,8 +969,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKOzY.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format("woff2");
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
         U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -998,8 +978,7 @@ h2 {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2)
-        format("woff2");
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
         U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
         U+2215, U+FEFF, U+FFFD;
@@ -1021,6 +1000,7 @@ h2 {
     width: 100%;
     margin: 20px 0px;
 }
+
 .container {
     display: none;
     max-width: 600px;
@@ -1134,4 +1114,84 @@ h2 {
 
 .slider-main {
     position: relative;
+}
+
+
+.ep-divo-upper {
+    border: none;
+    background-color: orange;
+    margin: 5px 10px 10px 10px;
+    padding: 10px 15px;
+}
+
+.ep-divo-upper option {
+    width: 120px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
     }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.ep-divo-lower {
+    max-height: 320px;
+    overflow-y: auto;
+    background-color: unset;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    place-items: center;
+    grid-gap: 10px;
+    transition: all 0.5s linear;
+}
+
+.ep-divo-outer {
+    background-color: #27272c;
+    width: 90%;
+    max-width: 770px;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+.ep-divo-outer section {
+    display: flex;
+    flex-direction: row;
+}
+
+.ep-btn {
+    background-color: #454444;
+    color: white;
+    display: block;
+}
+
+.ep-divo-outer h2 {
+    color: white;
+    margin-left: 15px;
+}
+
+.ep-btn:hover {
+    background-color: #eb001f;
+}
+
+#title1 {
+    width: 70%;
+    height: 86px
+}
+
+#title1 a {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 520px) {
+    #title1 img {
+        height: 55px;
+    }
+}
