@@ -605,6 +605,7 @@ h2 {
 
 .slideshow-container {
     width: 100%;
+    position:absolute
     
 }
 
@@ -625,7 +626,7 @@ h2 {
     align-content: flex-end;
     justify-content: flex-start;
     max-width: 100%;
-  height: auto;
+  
 }
 
 .mySlides img {
@@ -637,7 +638,7 @@ h2 {
     object-fit: cover;
     position:absolute;
     max-width: 100%;
-  height: auto;
+  
     
    
 }
