@@ -2,28 +2,27 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon"
-        href="https://telegra.ph/file/3dde3cde31e378ccc729a.jpg" />
-    <title>Watch TITLE - AB</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <title>Watch TITLE -ANIME</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="title" content="Watch TITLE - AB-STRAMER" />
+    <meta name="title" content="Watch TITLE - AnimeDex" />
     <meta name="description"
         content="Watch TITLE free anime online and it's latest episodes on AnimeDex. We provide free anime online experience without ads, signing up or downloading." />
     <meta name="keywords"
-        content="TITLE,Ab-streamer, anime dex, hindi dub, hindi sub, english dub, watch anime online, free anime, anime stream, anime hd, english sub, kissanime, gogoanime, animeultima, 9anime, 123animes, animefreak, vidstreaming, gogo-stream, animekisa, zoro.to, gogoanime.run, animefrenzy, animekisa" />
+        content="TITLE,, anime, dub,  sub, english dub, watch anime online, free anime, anime stream, anime hd, english sub, kissanime, gogoanime, animeultima, 9anime, 123animes, animefreak, vidstreaming, gogo-stream, animekisa, zoro.to, gogoanime.run, animefrenzy, animekisa" />
     <meta name="charset" content="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
     <meta name="revisit-after" content="1 days" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Content-Language" content="en" />
-    <meta property="og:title" content="Watch TITLE - AB-STREAMER" />
+    <meta property="og:title" content="Watch TITLE - AnimeDex" />
     <meta property="og:description"
         content="Watch TITLE free anime online and it's latest episodes on AnimeDex. We provide free anime online experience without ads, signing up or downloading." />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="AB-ANIME" />
+    <meta property="og:site_name" content="AnimeDex" />
     <meta property="og:url" content="URL" />
     <meta itemprop="image" content="https://telegra.ph/file/8449d673bc99f21025bfc.jpg" />
     <meta property="og:image" content="https://telegra.ph/file/8449d673bc99f21025bfc.jpg" />
@@ -31,17 +30,14 @@
         content="https://telegra.ph/file/8449d673bc99f21025bfc.jpg" />
     <meta property="og:image:width" content="650" />
     <meta property="og:image:height" content="350" />
-    <meta property="twitter:title" content="Watch TITLE - AB ANIME WEB" />
+    <meta property="twitter:title" content="Watch TITLE - Anime" />
     <meta property="twitter:description"
-        content="Watch TITLE free anime online and it's latest episodes on Ab-anime. We provide free anime online experience without ads, signing up or downloading." />
+        content="Watch TITLE free anime online and it's latest episodes on AnimeDex. We provide free anime online experience without ads, signing up or downloading." />
     <meta property="twitter:url" content="URL" />
     <meta property="twitter:card" content="summary" />
     <meta name="apple-mobile-web-app-status-bar" content="#202125" />
     <meta name="theme-color" content="#202125" />
     <link href="./css/anime.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/45cb819601.js" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHQX4066ZV"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-BHQX4066ZV');</script>
     <style>
         #cover {
             background-image: url("IMG");
@@ -49,38 +45,34 @@
     </style>
 </head>
 
-<body>
+<body id="body">
     <header id="head-div">
         <div id="title1">
-            <a href="./index.html"><img
-                    src="/20240215_111459_0000.png" height="10px" width="10px"
-                    alt="AB" /></a>
+            <a href="./index.html"><img src="" alt="AB"></a>
         </div>
         <div id="search-div">
             <form action="./search.html" method="GET">
                 <input type="text" name="query" id="query" placeholder="Search Anime..." required />
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <button name="search" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
-        <br>
-        <section>
-    <div class="marquee">
-    <marquee>⚡PLEASE NOTE THAT SOME ANIME'S MIGHT HAVE ERROR DUE TO API ISSUES PLEASE DON'T LET IT 😅DISTURB YOU 👌OKAY) </marquee>
-    </div>
-</section>
     </header>
+
     <div id="load">
-        <img src="https://i.gifer.com/31Kl.gif" alt="Loading..." />
+        <img src="./static/loading2.gif" alt="Loading..." />
     </div>
-        <div class=container id=error-page style="display: none;">
+
+    <!-- Error Page -->
+    <div class=container id=error-page style="display: none;">
         <h6>Oops! Something Went Wrong</h6>
         <p>We're sorry, but it seems that something went wrong. Try refreshing the page or try again later.
         <p>If the issue persists, you can contact our <a
-                href="https://ab-webl.vercel.app">support Abraham</a>.
-        <p>⚡sorry for the error we are working on it</p>
+                href"https:+233533763772">contact me</a>.
+        <p id=error-desc>
     </div>
+    <!-- Error Page -->
 
-    <div id="main-content" style="display: none">
+    <div id="main-content" style="display: none;">
         <section>
             <div id="background">
                 <div id="cover"></div>
@@ -88,7 +80,7 @@
 
             <div class="anime row">
                 <div class="poster col-3">
-                    <img src="IMG" />
+                    <img id="poster-img" class="lzy_img" src="./static/loading1.gif" data-src="IMG" style="display: none;" />
                 </div>
                 <div class="details col-6">
                     <h1 class="anime-title">TITLE</h1>
@@ -138,27 +130,38 @@
                 </div>
             </div>
         </section>
-        <section><input class='input-style' data-episode-number-search='' name='episode_number' placeholder='Episode number' type='text'/>    </section>
 
         <section id="watch">
             <div class="divo">
-                <h2>List Of Episodes:</h2>
-               
+                <!-- Episode Slider Start -->
                 <div id="slider-main" class="slider-main" style="display: none;">
                     <div id="slider-carousel" class="slider-carousel">
                         <div id="ep-slider" class="ep-slider"></div>
                     </div>
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(+1)">❯</a>
+                </div>
+                <!-- Episode Slider End -->
+
+                <!-- Episode List Start -->
+                <div id="ep-divo-outer" class="ep-divo-outer" style="display: none;">
+                    <section>
+                        <h2>List Of Episodes:</h2>
+                        <select id="ep-upper-div" class="ep-divo-upper divo2"
+                            onchange="episodeSelectChange(this)"></select>
+                    </section>
+                    <hr>
+                    <div id="ep-lower-div" class="ep-divo-lower divo2"></div>
+                </div>
+                <!-- Episode List End -->
             </div>
-                <div id="ephtmldiv" class="divo2">EPISODES</div>
         </section>
 
         <section id="similar-div">
             <div class="divox">
                 <h2 id="latest">Similar Animes</h2>
                 <div id="load" class="sload" style="display: none;">
-                    <img src="https://i.gifer.com/31Kl.gif" alt="Loading..." />
+                    <img src="./static/loading2.gif" alt="Loading..." />
                 </div>
                 <div id="latest2"></div>
             </div>
@@ -167,29 +170,18 @@
     <hr />
     <footer>
         <div>
-            <a href="https://github.com/abrahamdw882" target="_blank">MADE WITH <i class="fa fa-heart pulse"></i>BY TECH
-                ABRAHAM-DWAMENA</a>
-            <a href="https://chat.whatsapp.com/BdrUMg2IECCDO3rUEyZzXB" target="_blank">(@AB-BOTDEV)</a>
+            <a href="https://github.com/abrahamdw883" target="_blank">MADE WITH <i class="fa fa-heart pulse"></i>BY TECH
+                ABRAHAM/a>
+            <a href="https://ab-web.vercel.app" target="_blank">(@AB-BOT-INC)</a>
         </div>
     </footer>
     <hr />
 
-    
+
     <script src="./js/anime.js"></script>
     <script src="https://kit.fontawesome.com/45cb819601.js" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHQX4066ZV"></script>
-    <script>document.addEventListener("DOMContentLoaded", function() {
-    const inputElement = document.querySelector('.input-style');
-    const suggestions = ['Episode 1', 'Episode 2', 'Episode 3'];
-
-    inputElement.addEventListener('input', function(event) {
-        const inputValue = event.target.value;
-        const matchedSuggestions = suggestions.filter(suggestion =>
-            suggestion.toLowerCase().includes(inputValue.toLowerCase())
-        );
-        console.log(matchedSuggestions);
-    });
-});</script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-BHQX4066ZV');</script>
 </body>
 
-</html>
+    </html>
