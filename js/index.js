@@ -1,16 +1,43 @@
 // Api urls
 
-const IndexApi = "https://api.anime-dex.workers.dev/home";
-const recentapi = "https://api.anime-dex.workers.dev/recent/";
+const ProxyApi = "https://proxy.techzbots1.workers.dev/?u="
+const IndexApi = "/home";
+const recentapi = "/recent/";
+
+// Api Server Manager
+
+const AvailableServers = ['https://api1.anime-dex.workers.dev', 'https://api2.anime-dex.workers.dev', 'https://api3.anime-dex.workers.dev']
+
+function getApiServer() {
+    return AvailableServers[Math.floor(Math.random() * AvailableServers.length)]
+}
 
 // Usefull functions
 
-async function getJson(url) {
+async function getJson(path, errCount = 0) {
+    const ApiServer = getApiServer();
+
+    let url = ApiServer + path;
+
+
+    if (errCount > 2) {
+        throw `Too many errors while fetching ${url}`;
+    }
+
+    if (errCount > 0) {
+        // Retry fetch using proxy
+        console.log("Retrying fetch using proxy");
+        url = ProxyApi + url;
+    }
+
     try {
-        const response = await fetch(url);
+        const _url_of_site = new URL(window.location.href)
+        const referer = _url_of_site.origin
+        const response = await fetch(url, { headers: { 'referer': referer } });
         return await response.json();
     } catch (errors) {
         console.error(errors);
+        return getJson(path, errCount + 1);
     }
 }
 
@@ -49,16 +76,15 @@ async function getTrendingAnimes(data) {
         let status = anime["status"];
         let genres = genresToString(anime["genres"]);
         let description = anime["description"];
-        let url = "./anime.html?anime=" + encodeURIComponent(title);
+        let url = "./anime.html?anime_id=" + encodeURIComponent(title);
 
         let poster = anime["bannerImage"];
         if (poster == null) {
             poster = anime["coverImage"]["extraLarge"];
         }
 
-        SLIDER_HTML += `<div class="mySlides fade"> <div class="data-slider"> <p class="spotlight">#${
-            pos + 1
-        } Spotlight</p><h1>${title}</h1> <div class="extra1"> <span class="year"><i class="fa fa-play-circle"></i>${type}</span> <span class="year year2"><i class="fa fa-calendar"></i>${status}</span> <span class="cbox cbox1">${genres}</span> <span class="cbox cbox2">HD</span> </div><p class="small-synop">${description}</p><div id="watchh"> <a href="${url}" class="watch-btn"> <i class="fa fa-play-circle"></i> Watch Now </a> <a href="${url}" class="watch-btn watch-btn2"> <i class="fa fa-info-circle"></i> Details<i class="fa fa-angle-right"></i> </a> </div></div><div class="shado"> <a href="${url}"></a> </div><img src="${poster}"> </div>`;
+        SLIDER_HTML += `<div class="mySlides fade"> <div class="data-slider"> <p class="spotlight">#${pos + 1
+            } Spotlight</p><h1>${title}</h1> <div class="extra1"> <span class="year"><i class="fa fa-play-circle"></i>${type}</span> <span class="year year2"><i class="fa fa-calendar"></i>${status}</span> <span class="cbox cbox1">${genres}</span> <span class="cbox cbox2">HD</span> </div><p class="small-synop">${description}</p><div id="watchh"> <a href="${url}" class="watch-btn"> <i class="fa fa-play-circle"></i> Watch Now </a> <a href="${url}" class="watch-btn watch-btn2"> <i class="fa fa-info-circle"></i> Details<i class="fa fa-angle-right"></i> </a> </div></div><div class="shado"> <a href="${url}"></a> </div><img src="${poster}"> </div>`;
     }
 
     document.querySelector(".slideshow-container").innerHTML =
@@ -74,7 +100,7 @@ async function getPopularAnimes(data) {
         let anime = data[pos];
         let title = anime["title"];
         let id = anime["id"];
-        let url = "./anime.html?anime=" + id;
+        let url = "./anime.html?anime_id=" + id;
         let image = anime["image"];
         let subOrDub;
         if (title.toLowerCase().includes("dub")) {
@@ -83,9 +109,8 @@ async function getPopularAnimes(data) {
             subOrDub = "SUB";
         }
 
-        POPULAR_HTML += `<a href="${url}"><div class="poster la-anime"> <div id="shadow1" class="shadow"><div class="dubb"># ${
-            pos + 1
-        }</div> <div class="dubb dubb2">${subOrDub}</div> </div><div id="shadow2" class="shadow"> <img class="lzy_img" src="https://cdn.jsdelivr.net/gh/TechShreyash/AnimeDex@main/static/img/loading.gif" data-src="${image}"> </div><div class="la-details"> <h3>${title}</h3></div></div></a>`;
+        POPULAR_HTML += `<a href="${url}"><div class="poster la-anime"> <div id="shadow1" class="shadow"><div class="dubb"># ${pos + 1
+            }</div> <div class="dubb dubb2">${subOrDub}</div> </div><div id="shadow2" class="shadow"> <img class="lzy_img" src="./static/loading1.gif" data-src="${image}"> </div><div class="la-details"> <h3>${title}</h3></div></div></a>`;
     }
 
     document.querySelector(".popularg").innerHTML = POPULAR_HTML;
@@ -98,8 +123,8 @@ async function getRecentAnimes(page = 1) {
     for (let pos = 0; pos < data.length; pos++) {
         let anime = data[pos];
         let title = anime["title"];
-        let id = anime["id"];
-        let url = "./anime.html?anime=" + id;
+        let id = anime["id"].split("-episode-")[0];
+        let url = "./anime.html?anime_id=" + id;
         let image = anime["image"];
         let ep = anime["episode"].split(" ")[1];
         let subOrDub;
@@ -109,7 +134,7 @@ async function getRecentAnimes(page = 1) {
             subOrDub = "SUB";
         }
 
-        RECENT_HTML += `<a href="${url}"><div class="poster la-anime"> <div id="shadow1" class="shadow"><div class="dubb">${subOrDub}</div><div class="dubb dubb2">EP ${ep}</div> </div><div id="shadow2" class="shadow"> <img class="lzy_img" src="https://cdn.jsdelivr.net/gh/TechShreyash/AnimeDex@main/static/img/loading.gif" data-src="${image}"> </div><div class="la-details"> <h3>${title}</h3></div></div></a>`;
+        RECENT_HTML += `<a href="${url}"><div class="poster la-anime"> <div id="shadow1" class="shadow"><div class="dubb">${subOrDub}</div><div class="dubb dubb2">EP ${ep}</div> </div><div id="shadow2" class="shadow"> <img class="lzy_img" src="./static/loading1.gif" data-src="${image}"> </div><div class="la-details"> <h3>${title}</h3></div></div></a>`;
     }
 
     document.querySelector(".recento").innerHTML += RECENT_HTML;
@@ -182,44 +207,44 @@ function sleep(ms) {
 
 // To load more animes when scrolled to bottom
 let page = 2;
-let isLoading = 0;
-let errCount = 0;
-function loadAnimes() {
+let isLoading = false;
+
+async function loadAnimes() {
     try {
-        if (isLoading == 0) {
-            isLoading = 1;
-            getRecentAnimes(page).then((data) => {
-                RefreshLazyLoader();
-                console.log("Recent animes loaded");
-            });
+        if (isLoading == false) {
+            isLoading = true;
+            await getRecentAnimes(page)
+            RefreshLazyLoader();
+            console.log("Recent animes loaded");
             page += 1;
-            isLoading = 0;
-            errCount = 0;
+            isLoading = false;
         }
     } catch (error) {
-        isLoading = 0;
-        errCount += 1;
-        if (errCount < 5) {
-            setTimeout(loadAnimes(), 2000);
-        }
+        isLoading = false;
+        console.error(`Failed To Load Recent Animes Page : ${page}`);
+        page += 1;
     }
 }
 
-window.addEventListener("scroll", () => {
-    if (
-        window.scrollY + window.innerHeight >=
-        document.documentElement.scrollHeight
-    ) {
+// Add a scroll event listener
+window.addEventListener('scroll', function () {
+    // Calculate how far the user has scrolled
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    if ((scrollPosition + (3 * windowHeight)) >= documentHeight) {
         loadAnimes();
     }
 });
+
 
 // Running functions
 
 getJson(IndexApi).then((data) => {
     data = data["results"];
-    const anilistTrending = data["anilistTrending"];
-    const gogoanimePopular = data["gogoPopular"];
+    const anilistTrending = shuffle(data["anilistTrending"]);
+    const gogoanimePopular = shuffle(data["gogoPopular"]);
 
     getTrendingAnimes(anilistTrending).then((data) => {
         RefreshLazyLoader();
