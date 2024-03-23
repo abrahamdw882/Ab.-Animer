@@ -273,7 +273,7 @@ async function getEpSlider(total) {
 // Retry image load
 function retryImageLoad(img) {
     const ImageUrl = img.src
-    img.src = "./static/loading1.gif";
+    img.src = "./loading2.gif";
 
     // load after 3 second
 
