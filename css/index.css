@@ -624,6 +624,8 @@ h2 {
     flex-wrap: wrap;
     align-content: flex-end;
     justify-content: flex-start;
+    max-width: 100%;
+  height: auto;
 }
 
 .mySlides img {
@@ -634,6 +636,8 @@ h2 {
     border: none;
     object-fit: cover;
     position:absolute;
+    max-width: 100%;
+  height: auto;
     
    
 }
