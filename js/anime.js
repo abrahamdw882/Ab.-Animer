@@ -6,15 +6,7 @@ const recommendationsapi = "/recommendations/";
 
 // Api Server Manager
 
-const AvailableServers = [
-    "https://api1.anime-dex.workers.dev",
-    "https://api2.anime-dex.workers.dev",
-    "https://api3.anime-dex.workers.dev",
-    "https://api.techzbots1.workers.dev",
-    "https://api1.techzbots1.workers.dev",
-    "https://api2.techzbots1.workers.dev",
-    "https://api3.techzbots1.workers.dev",
-];
+const AvailableServers = ["https://api69.anime-dex.workers.dev"];
 
 function getApiServer() {
     return AvailableServers[Math.floor(Math.random() * AvailableServers.length)];
@@ -181,7 +173,7 @@ async function getEpSlider(total) {
             const episodeId = total[i][1];
             const epNum = total[i][0].replaceAll("-", ".");
             if (Number(epNum) > 0) {
-                ephtml += `<div class=ep-slide><a href="./episode.html?anime_id=${AnimeID}&episode_id=${episodeId}"><img onerror="retryImageLoad(this)" class="lzy_img" src="./static/loading1.gif" data-src=https://thumb.anime-dex.workers.dev/thumb/${episodeId}><div class=ep-title><span>Episode ${epNum}</span></div></a></div>`;
+                ephtml += `<div class=ep-slide><a href="./episode.html?anime_id=${AnimeID}&episode_id=${episodeId}"><img onerror="retryImageLoad(this)" class="lzy_img" src="./static/loading1.gif" data-src=https://thumb.techzbots1.workers.dev/thumb/${episodeId}><div class=ep-title><span>Episode ${epNum}</span></div></a></div>`;
             }
         }
         document.getElementById("ep-slider").innerHTML = ephtml;
