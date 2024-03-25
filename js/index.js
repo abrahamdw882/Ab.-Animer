@@ -1,15 +1,23 @@
 // Api urls
 
-const ProxyApi = "https://proxy.techzbots1.workers.dev/?u="
+const ProxyApi = "https://proxy.techzbots1.workers.dev/?u=";
 const IndexApi = "/home";
 const recentapi = "/recent/";
 
 // Api Server Manager
 
-const AvailableServers = ['https://api1.anime-dex.workers.dev', 'https://api2.anime-dex.workers.dev', 'https://api3.anime-dex.workers.dev']
+const AvailableServers = [
+    "https://api1.anime-dex.workers.dev",
+    "https://api2.anime-dex.workers.dev",
+    "https://api3.anime-dex.workers.dev",
+    "https://api.techzbots1.workers.dev",
+    "https://api1.techzbots1.workers.dev",
+    "https://api2.techzbots1.workers.dev",
+    "https://api3.techzbots1.workers.dev",
+];
 
 function getApiServer() {
-    return AvailableServers[Math.floor(Math.random() * AvailableServers.length)]
+    return AvailableServers[Math.floor(Math.random() * AvailableServers.length)];
 }
 
 // Usefull functions
@@ -18,7 +26,6 @@ async function getJson(path, errCount = 0) {
     const ApiServer = getApiServer();
 
     let url = ApiServer + path;
-
 
     if (errCount > 2) {
         throw `Too many errors while fetching ${url}`;
@@ -31,9 +38,9 @@ async function getJson(path, errCount = 0) {
     }
 
     try {
-        const _url_of_site = new URL(window.location.href)
-        const referer = _url_of_site.origin
-        const response = await fetch(url, { headers: { 'referer': referer } });
+        const _url_of_site = new URL(window.location.href);
+        const referer = _url_of_site.origin;
+        const response = await fetch(url, { headers: { referer: referer } });
         return await response.json();
     } catch (errors) {
         console.error(errors);
@@ -134,7 +141,7 @@ async function getRecentAnimes(page = 1) {
             subOrDub = "SUB";
         }
 
-        RECENT_HTML += `<a href="${url}"><div class="poster la-anime"> <div id="shadow1" class="shadow"><div class="dubb">${subOrDub}</div><div class="dubb dubb2">EP ${ep}</div> </div><div id="shadow2" class="shadow"> <img class="lzy_img" src="https://i.gifer.com/31Kl.gif" data-src="${image}"> </div><div class="la-details"> <h3>${title}</h3></div></div></a>`;
+        RECENT_HTML += `<a href="${url}"><div class="poster la-anime"> <div id="shadow1" class="shadow"><div class="dubb">${subOrDub}</div><div class="dubb dubb2">EP ${ep}</div> </div><div id="shadow2" class="shadow"> <img class="lzy_img" src="./static/loading1.gif" data-src="${image}"> </div><div class="la-details"> <h3>${title}</h3></div></div></a>`;
     }
 
     document.querySelector(".recento").innerHTML += RECENT_HTML;
@@ -213,7 +220,7 @@ async function loadAnimes() {
     try {
         if (isLoading == false) {
             isLoading = true;
-            await getRecentAnimes(page)
+            await getRecentAnimes(page);
             RefreshLazyLoader();
             console.log("Recent animes loaded");
             page += 1;
@@ -227,17 +234,16 @@ async function loadAnimes() {
 }
 
 // Add a scroll event listener
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
     // Calculate how far the user has scrolled
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
 
-    if ((scrollPosition + (3 * windowHeight)) >= documentHeight) {
+    if (scrollPosition + 3 * windowHeight >= documentHeight) {
         loadAnimes();
     }
 });
-
 
 // Running functions
 
