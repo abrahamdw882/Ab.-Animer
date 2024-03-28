@@ -1,6 +1,6 @@
 // Api urls
 
-const ProxyApi = "https://proxy.techzbots1.workers.dev/?u=";
+const ProxyApi = "https://worker-tight-lake-a297.abrahamdw882.workers.dev/?u=";
 const animeapi = "/anime/";
 const recommendationsapi = "/recommendations/";
 
